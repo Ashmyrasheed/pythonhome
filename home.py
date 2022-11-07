@@ -1,4 +1,5 @@
 import mysql.connector
+from datetime import datetime
 
 mydb = mysql.connector.connect(host = 'localhost' , user = 'root' , password = '' , database = 'homeautomationdb')
 mycursor = mydb.cursor()
@@ -17,8 +18,6 @@ while True:
     print("5 delete ")
 
     print("6 exit")
-
-   
 
     choice = int(input('enter an option:'))
 
@@ -42,9 +41,6 @@ while True:
 
         print("value inserted succesfully")
         
-        
-    
-
     elif(choice==2):
 
         sql = 'SELECT * FROM `sensorvalues`'
@@ -52,11 +48,31 @@ while True:
         result = mycursor.fetchall()
         for i in result:
             print(i)
-
     elif(choice==3):
 
-        print('search ')
+        print("search  selected")
 
+
+
+        date = input("enter the date: ")
+
+
+
+        sql = "SELECT `temperature`, `humidity`, `moisture`, `date` FROM `sensorvalues` WHERE `date` ='"+date+"'"
+
+
+
+        mycursor.execute(sql)
+
+
+
+        result = mycursor.fetchall()
+
+
+
+        print(result)
+        
+   
     elif(choice==4):
 
         print('update ')
