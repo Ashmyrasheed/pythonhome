@@ -24,7 +24,23 @@ while True:
 
     if(choice==1):
 
-        print(' insert selected')
+        print("add selected")
+
+        temperature = input("enter the temperature")
+
+        humidity = input("enter the humidity")
+
+        moisture = input("enter the moisture")
+
+        sql = 'INSERT INTO `sensorvalues`(`temperature`, `humidity`, `moisture`, `date`) VALUES (%s,%s,%s,now())'
+
+        data = (temperature,humidity,moisture)
+
+        mycursor.execute(sql , data)
+
+        mydb.commit()
+
+        print("value inserted succesfully")
         
         
     
