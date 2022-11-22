@@ -13,10 +13,6 @@ while True:
 
     print("3 search ")
 
-    print("4 update ")    
-
-    print("5 delete ")
-
     print("6 exit")
 
     choice = int(input('enter an option:'))
@@ -73,13 +69,6 @@ while True:
         print(result)
         
    
-    elif(choice==4):
-
-        print('update ')
-
-    elif(choice==5):
-
-        print('delete ')
 
     elif(choice==6):
 
